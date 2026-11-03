@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="re:suelta - Espacio de psicología integral por Silvana Guerrero en Surco, Lima. Especialistas en crianza positiva y acompañamiento infanto-juvenil."
+    />
+    <title>re:suelta | espacio de psicología integral</title>
+    <link rel="icon" type="image/jpeg" href="assets/logo_resuelta.jpg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav>
+      <div class="nav-logo">
+        <a href="#">
+          <!-- Reemplaza la ruta con la ubicación real de tu logo -->
+          <img
+            src="assets/logo_resuelta_minima.png"
+            alt="re:suelta logo"
+            class="logo-img"
+          />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#talleres">Talleres</a></li>
+        <li><a href="#enfoque">Mi enfoque</a></li>
+        <li><a href="#espacio">El Espacio</a></li>
+        <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Espacio de psicología integral</p>
+        <h1 class="hero-title">
+          Un espacio para<br /><em>re:conectar</em><br />contigo misma
+        </h1>
+        <p class="hero-desc">
+          Acompañamiento psicológico cercano, especializado en crianza, niños,
+          adolescentes y el bienestar de las familias. Un lugar donde anudar lo
+          que se ha soltado — y soltar lo que ya no nos sirve.
+        </p>
+        <div class="hero-btns">
+          <a href="#contacto" class="btn-primary">Reservar consulta</a>
+          <a href="#servicios" class="btn-secondary">Ver servicios</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div style="position: relative">
+          <div class="hero-card-main">
+            <div class="ribbon-wrap">
+              <div class="hero-ribbon" aria-hidden="true">
+                <img class="ribbon-knot" src="assets/nudo.png" alt="" />
+                <img class="ribbon-tail" src="assets/nudo.png" alt="" />
+              </div>
+              <div class="ribbon-sparkles" aria-hidden="true"></div>
+            </div>
+            <div class="hero-card-name">Silvana Guerrero</div>
+            <div class="hero-card-title">Psicóloga & Psicoterapeuta</div>
+            <div class="hero-card-tags">
+              <span class="tag">Crianza Positiva</span>
+              <span class="tag">Infanto-Juvenil</span>
+              <span class="tag">Evaluaciones</span>
+              <span class="tag">Surco, Lima</span>
+            </div>
+          </div>
+          <div class="floating-badge badge-1">🌱 Disciplina Positiva</div>
+          <div class="floating-badge badge-2">💛 Atención presencial</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="sobre" id="sobre">
+      <div class="sobre-photo">
+        <div class="photo-frame">
+          <div class="photo-frame">
+            <img
+              src="assets/Fotos/foto2.png"
+              alt="Silvana Guerrero, psicóloga"
+            />
+          </div>
+          <!-- Oculta el div de arriba y usa esto cuando tengas la foto -->
+          <!-- <img src="tu-foto-aqui.jpg" alt="Silvana Guerrero, Psicóloga" /> -->
+        </div>
+        <div class="sobre-quote">
+          "Cada familia tiene su propio nudo — yo te ayudo a encontrar el hilo."
+        </div>
+      </div>
+      <div class="sobre-content">
+        <p class="section-label">Sobre mí</p>
+        <h2 class="section-title">Hola, soy <em>Silvana</em></h2>
+        <p class="section-subtitle">
+          Soy psicóloga y psicoterapeuta, especializada en acompañamiento
+          infanto-juvenil y consultoría en crianza desde un enfoque de
+          Disciplina Positiva. Mi espacio, <strong>re:suelta</strong>, nació con
+          la convicción de que el bienestar emocional no es un lujo — es una
+          necesidad.
+        </p>
+        <p class="section-subtitle" style="margin-top: 16px">
+          Atiendo de forma presencial en Santiago de Surco, Lima. Mi enfoque es
+          cercano, integral y siempre centrado en las personas que acompañe —
+          sean niñas, niños, adolescentes o sus familias.
+        </p>
+        <div class="sobre-chips">
+          <span class="chip">🎓 Licenciada en Psicología</span>
+          <span class="chip">🧒 Especialista infanto-juvenil</span>
+          <span class="chip">🌸 Disciplina Positiva</span>
+          <span class="chip">📍 Surco, Lima</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA SILVANA -->
+    <section class="galeria-personal">
+      <!--  <div class="galeria-header">
+        <h2 class="section-title">Un poco más <em>de mí</em></h2>
+      </div> -->
+
+      <div class="gallery-staggered-wrapper">
+        <!-- Fila 1 (3 fotos arriba) -->
+        <div class="gallery-staggered-row">
+          <img
+            src="assets/Fotos/foto5.png"
+            alt="Silvana trabajando"
+            class="gallery-img lightbox-trigger"
+            loading="lazy"
+          />
+          <img
+            src="assets/Fotos/foto2.png"
+            alt="Silvana en sesión"
+            class="gallery-img lightbox-trigger"
+            loading="lazy"
+          />
+          <img
+            src="assets/Fotos/foto3.png"
+            alt="Silvana sonriendo"
+            class="gallery-img lightbox-trigger"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Fila 2 (3 fotos abajo) -->
+        <div class="gallery-staggered-row">
+          <img
+            src="assets/Fotos/foto3.png"
+            alt="Silvana en su consultorio"
+            class="gallery-img lightbox-trigger"
+            loading="lazy"
+          />
+          <img
+            src="assets/Fotos/foto4.png"
+            alt="Detalle de sesión"
+            class="gallery-img lightbox-trigger"
+            loading="lazy"
+          />
+          <img
+            src="assets/Fotos/foto2.png"
+            alt="Silvana sonriendo"
+            class="gallery-img lightbox-trigger"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- SERVICIOS -->
+    <section class="servicios" id="servicios">
+      <div class="servicios-header">
+        <p class="section-label">Lo que ofrezco</p>
+        <h2 class="section-title">Mis <em>servicios</em></h2>
+        <p class="section-subtitle">
+          Cada servicio está pensado para acompañarte con calidez y
+          profesionalismo en el camino hacia el bienestar. Consulta por la
+          duración e inversión de cada proceso.
+        </p>
+      </div>
+
+      <div class="servicios-grid">
+        <!-- 1. Evaluación psicológica socio-emocional -->
+        <div class="servicio-card">
+          <div class="servicio-icon icon-verde">🧩</div>
+          <h3>Evaluación psicológica socio-emocional</h3>
+          <p>
+            Busca identificar sucesos que interfieran en las actividades
+            diarias. Explora emociones, autoestima, habilidades sociales,
+            vínculos y adaptación.
+          </p>
+        </div>
+
+        <!-- 2. Evaluación psicológica integral -->
+        <div class="servicio-card">
+          <div class="servicio-icon icon-melocoton">📋</div>
+          <h3>Evaluación psicológica integral</h3>
+          <p>
+            Evalúa áreas emocionales, sociales y cognitivas para diseñar una
+            intervención individualizada centrada en las necesidades del
+            paciente.
+          </p>
+        </div>
+
+        <!-- 3. Evaluación neuropsicológica infantil -->
+        <div class="servicio-card">
+          <div class="servicio-icon icon-verde">🧠</div>
+          <h3>Evaluación neuropsicológica infantil</h3>
+          <p>
+            Explora el desarrollo de atención, memoria, lenguaje y funciones
+            ejecutivas, identificando fortalezas y áreas que requieren apoyo.
+          </p>
+        </div>
+
+        <!-- 4. Evaluación vocacional -->
+        <div class="servicio-card">
+          <div class="servicio-icon icon-melocoton">🧭</div>
+          <h3>Evaluación vocacional</h3>
+          <p>
+            Explora intereses, habilidades, características personales y
+            preferencias para orientar de manera asertiva la elección académica
+            y profesional.
+          </p>
+        </div>
+
+        <!-- 5. Terapia parental -->
+        <div class="servicio-card">
+          <div class="servicio-icon icon-verde">👨‍👩‍👧</div>
+          <h3>Terapia parental</h3>
+          <p>
+            Espacio para padres y cuidadores que brinda herramientas de crianza,
+            comunicación y límites, fortaleciendo el vínculo desde una mirada
+            respetuosa.
+          </p>
+        </div>
+
+        <!-- 6. Terapia familiar -->
+        <div class="servicio-card">
+          <div class="servicio-icon icon-melocoton">🏡</div>
+          <h3>Terapia familiar</h3>
+          <p>
+            Un lugar seguro para mejorar la comunicación, expresar emociones y
+            necesidades, resolver conflictos y fortalecer profundamente los
+            vínculos familiares.
+          </p>
+        </div>
+
+        <!-- 7. Terapia infanto-juvenil -->
+        <div class="servicio-card">
+          <div class="servicio-icon icon-verde">🧸</div>
+          <h3>Terapia infanto-juvenil</h3>
+          <p>
+            Acompañamiento emocional para niños y adolescentes orientado a
+            fortalecer su autoestima, expresión, regulación, comunicación y
+            habilidades sociales.
+          </p>
+        </div>
+
+        <!-- 8. Terapia adulto -->
+        <div class="servicio-card">
+          <div class="servicio-icon icon-melocoton">👤</div>
+          <h3>Terapia adulto</h3>
+          <p>
+            Espacio para trabajar emociones, vínculos, autoestima y situaciones
+            que generan malestar, favoreciendo un mayor autoconocimiento y
+            bienestar.
+          </p>
+        </div>
+
+        <!-- 9. Terapia de pareja -->
+        <div class="servicio-card">
+          <div class="servicio-icon icon-verde">🤝</div>
+          <h3>Terapia de pareja</h3>
+          <p>
+            Comprende la dinámica de la relación para mejorar la comunicación,
+            expresar necesidades y construir vínculos mucho más conscientes y
+            saludables.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- TALLERES -->
+    <section class="talleres" id="talleres">
+      <p class="section-label">Aprende y comparte</p>
+      <h2 class="section-title">Talleres <em>grupales</em></h2>
+      <p class="section-subtitle">
+        Espacios íntimos para reflexionar, aprender y conectar con otras
+        personas en un ambiente de confianza y crecimiento.
+      </p>
+
+      <div class="talleres-layout">
+        <div>
+          <div class="taller-item">
+            <span class="taller-num">01</span>
+            <div class="taller-info">
+              <h4>Cosas que aprendí en terapia</h4>
+              <p>
+                Un espacio íntimo para compartir verdades emocionales que nadie
+                nos enseñó. Dinámicas grupales + ejercicios de reflexión.
+              </p>
+            </div>
+          </div>
+          <div class="taller-item">
+            <span class="taller-num">02</span>
+            <div class="taller-info">
+              <h4>Crianza consciente</h4>
+              <p>
+                Taller práctico para madres, padres y cuidadores sobre vínculos
+                seguros, comunicación y límites desde el amor.
+              </p>
+            </div>
+          </div>
+          <div class="taller-item">
+            <span class="taller-num">03</span>
+            <div class="taller-info">
+              <h4>Regulación emocional</h4>
+              <p>
+                Herramientas concretas para reconocer, entender y gestionar las
+                emociones propias y las de tus hijos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="talleres-cta-box">
+          <span class="big-emoji">🌀</span>
+          <h3>¿Quieres saber cuándo es el próximo taller?</h3>
+          <p>
+            Déjame tus datos y te aviso antes que nadie. Los cupos son limitados
+            para mantener la intimidad del grupo.
+          </p>
+          <a href="#contacto" class="btn-light">¡Me apunto a la lista!</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="valores" id="enfoque">
+      <p class="section-label">Mi enfoque</p>
+      <h2 class="section-title">Cómo <em>trabajo</em></h2>
+      <div class="valores-grid">
+        <div class="valor-item">
+          <span class="valor-emoji">🌿</span>
+          <h4>Calidez</h4>
+          <p>
+            Cada persona merece un espacio donde sentirse vista, escuchada y
+            acompañada sin juicios.
+          </p>
+        </div>
+        <div class="valor-item">
+          <span class="valor-emoji">🔬</span>
+          <h4>Rigor</h4>
+          <p>
+            Mi práctica está fundamentada en evidencia científica y formación
+            continua en psicología.
+          </p>
+        </div>
+        <div class="valor-item">
+          <span class="valor-emoji">🤝</span>
+          <h4>Vínculo</h4>
+          <p>
+            La relación terapéutica es el motor del cambio. Construimos
+            confianza paso a paso.
+          </p>
+        </div>
+        <div class="valor-item">
+          <span class="valor-emoji">✨</span>
+          <h4>Integralidad</h4>
+          <p>
+            Miro a la persona en toda su complejidad: emociones, historia,
+            contexto y vínculos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EL ESPACIO Y ALQUILER -->
+    <section class="espacio-alquiler" id="espacio">
+      <div class="espacio-header">
+        <div>
+          <p class="section-label">Consultorio en Surco</p>
+          <h2 class="section-title">Un lugar para <em>sanar</em></h2>
+          <p class="section-subtitle">
+            He diseñado este espacio pensando en la calma y el confort de mis
+            pacientes.
+            <strong
+              >Además, el consultorio está disponible para alquiler</strong
+            >
+            por horas o turnos para otros profesionales de la salud mental que
+            busquen un lugar seguro y equipado para atender.
+          </p>
+        </div>
+      </div>
+
+      <!-- Galería estilo Masonry para el Espacio -->
+      <div class="gallery-masonry">
+        <img
+          src="assets/Espacio/espacio1.png"
+          alt="Vista general del consultorio"
+          class="gallery-img lightbox-trigger"
+          loading="lazy"
+        />
+        <img
+          src="assets/Espacio/espacio2.png"
+          alt="Detalle del espacio de terapia"
+          class="gallery-img lightbox-trigger"
+          loading="lazy"
+        />
+        <img
+          src="assets/Espacio/espacio3.png"
+          alt="Sala de espera"
+          class="gallery-img lightbox-trigger"
+          loading="lazy"
+        />
+        <img
+          src="assets/Espacio/espacio4.png"
+          alt="Foto Consultorio 4"
+          class="gallery-img lightbox-trigger"
+          loading="lazy"
+        />
+        <img
+          src="assets/Espacio/espacio1.png"
+          alt="Foto Consultorio 5"
+          class="gallery-img lightbox-trigger"
+          loading="lazy"
+        />
+        <img
+          src="assets/Espacio/espacio2.png"
+          alt="Foto Consultorio 6"
+          class="gallery-img lightbox-trigger"
+          loading="lazy"
+        />
+        <img
+          src="assets/Espacio/espacio3.png"
+          alt="Foto Consultorio 7"
+          class="gallery-img lightbox-trigger"
+          loading="lazy"
+        />
+        <img
+          src="assets/Espacio/espacio4.png"
+          alt="Foto Consultorio 8"
+          class="gallery-img lightbox-trigger"
+          loading="lazy"
+        />
+        <img
+          src="assets/Espacio/espacio1.png"
+          alt="Foto Consultorio 9"
+          class="gallery-img lightbox-trigger"
+          loading="lazy"
+        />
+        <img
+          src="assets/Espacio/espacio2.png"
+          alt="Foto Consultorio 10"
+          class="gallery-img lightbox-trigger"
+          loading="lazy"
+        />
+      </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL (VISOR DE IMÁGENES) -->
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img id="lightbox-img" src="" alt="Imagen ampliada" />
+    </div>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto">
+      <div>
+        <p class="section-label">Hablemos</p>
+        <h2 class="section-title">
+          ¿Lista para<br /><em>dar el primer paso?</em>
+        </h2>
+        <p class="section-subtitle" style="margin-bottom: 44px">
+          Escríbeme y agendamos una primera cita o resolvemos tus dudas sobre el
+          alquiler del espacio.
+        </p>
+
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <h5>Ubicación</h5>
+            <p>Santiago de Surco, Lima, Perú</p>
+          </div>
+        </div>
+
+        <!-- INSTAGRAM CON ICONO CORREGIDO -->
+        <div class="info-item">
+          <div class="info-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              style="color: var(--melocoton)"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+          <div>
+            <h5>Instagram</h5>
+            <p>
+              <a
+                href="https://instagram.com/re.suelta.psi"
+                target="_blank"
+                class="info-link"
+              >
+                @re.suelta.psi
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- WHATSAPP CON ICONO OFICIAL -->
+        <div class="info-item">
+          <div class="info-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="var(--melocoton)"
+            >
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+              />
+            </svg>
+          </div>
+          <div>
+            <h5>WhatsApp</h5>
+            <p>
+              <a
+                href="https://wa.me/51967139752?text=%20Hola%20%2C%20Quisiera%20informaci%C3%B3n%20por%20favor"
+                target="_blank"
+                class="info-link"
+              >
+                Enviar mensaje por chat ➔
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <!-- FORMULARIO ACTUALIZADO -->
+        <form
+          id="contactForm"
+          class="contacto-form"
+          action="enviar.php"
+          method="POST"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                placeholder="Tu nombre"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="telefono">WhatsApp / Teléfono</label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                placeholder="+51 999 000 000"
+                required
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo electrónico</label>
+            <input
+              type="email"
+              id="correo"
+              name="correo"
+              placeholder="tu@correo.com"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="motivo">¿Cuál es el motivo de tu consulta?</label>
+            <select id="motivo" name="motivo" required>
+              <option value="">Selecciona una opción</option>
+              <option value="Evaluación psicológica socio-emocional">
+                1. Evaluación psicológica socio-emocional
+              </option>
+              <option value="Evaluación psicológica integral">
+                2. Evaluación psicológica integral
+              </option>
+              <option value="Evaluación neuropsicológica infantil">
+                3. Evaluación neuropsicológica infantil
+              </option>
+              <option value="Evaluación vocacional">
+                4. Evaluación vocacional
+              </option>
+              <option value="Terapia parental">5. Terapia parental</option>
+              <option value="Terapia familiar">6. Terapia familiar</option>
+              <option value="Terapia infanto-juvenil">
+                7. Terapia infanto-juvenil
+              </option>
+              <option value="Terapia adulto">8. Terapia adulto</option>
+              <option value="Terapia de pareja">9. Terapia de pareja</option>
+              <option value="Alquiler de consultorio">
+                Información sobre alquiler de consultorio
+              </option>
+              <option value="Orientación">
+                No sé aún, necesito orientación
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Cuéntame un poco (opcional)</label>
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              placeholder="¿Por qué quieres consultar o qué dudas tienes sobre el alquiler?"
+            ></textarea>
+          </div>
+          <button
+            id="btnEnviar"
+            type="submit"
+            class="btn-primary"
+            style="align-self: flex-start; padding: 16px 40px"
+          >
+            Enviar mensaje 💛
+          </button>
+        </form>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-logo">re<span>:</span>suelta</div>
+      <p>Espacio de psicología integral · Silvana Guerrero Araujo</p>
+      <ul class="footer-links">
+        <li><a href="#sobre">Sobre mí</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#espacio">El Espacio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

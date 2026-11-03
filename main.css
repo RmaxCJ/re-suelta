@@ -1,0 +1,1252 @@
+:root {
+  --verde: #5a6e3a;
+  --verde-claro: #7a9050;
+  --verde-suave: #e8eed8;
+  --melocoton: #e8a87c;
+  --melocoton-claro: #f3c9a8;
+  --melocoton-palido: #fdf0e6;
+  --crema: #faf8f4;
+  --cafe: #6b5744;
+  --texto: #3d3830;
+  --texto-suave: #7a6e62;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--crema);
+  color: var(--texto);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--verde-suave);
+  border-bottom: 1px solid rgba(90, 110, 58, 0.15);
+  box-shadow: 0 4px 24px rgba(61, 56, 48, 0.08);
+}
+
+.nav-logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--verde);
+  letter-spacing: -0.5px;
+}
+.nav-logo span {
+  color: var(--melocoton);
+}
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 55px; /* Puedes subir o bajar este valor para hacer el logo más grande o pequeño */
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05); /* Pequeño efecto al pasar el mouse */
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--cafe);
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: var(--verde);
+}
+
+.nav-cta {
+  background: var(--verde);
+  color: white !important;
+  padding: 10px 24px;
+  border-radius: 100px;
+  transition: background 0.3s !important;
+}
+.nav-cta:hover {
+  background: var(--verde-claro) !important;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 120px 60px 80px;
+  gap: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--melocoton-palido) 0%,
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+.hero-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--melocoton);
+  font-weight: 500;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+.hero-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.5rem, 5vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--verde);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.4s forwards;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--melocoton);
+}
+.hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--texto-suave);
+  max-width: 440px;
+  margin-bottom: 44px;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.6s forwards;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.8s forwards;
+}
+
+.btn-primary {
+  background: var(--verde);
+  color: white;
+  padding: 15px 36px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  letter-spacing: 0.3px;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: var(--verde-claro);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(90, 110, 58, 0.25);
+}
+
+.btn-secondary {
+  color: var(--verde);
+  padding: 15px 36px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1.5px solid var(--verde);
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-secondary:hover {
+  background: var(--verde-suave);
+  transform: translateY(-2px);
+}
+
+.hero-visual {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  animation: fadeIn 1.2s ease 0.5s forwards;
+}
+.hero-card-main {
+  background: white;
+  border-radius: 32px;
+  padding: 50px 44px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.07);
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+  position: relative;
+}
+.hero-card-main::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 35px;
+  background: linear-gradient(
+    135deg,
+    var(--melocoton-claro),
+    var(--verde-suave)
+  );
+  z-index: -1;
+}
+
+.hero-card-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--verde);
+  margin-bottom: 6px;
+}
+.hero-card-title {
+  font-size: 0.85rem;
+  color: var(--melocoton);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.tag {
+  background: var(--verde-suave);
+  color: var(--verde);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.floating-badge {
+  position: absolute;
+  background: white;
+  border-radius: 20px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: float 3s ease-in-out infinite;
+}
+.badge-1 {
+  top: 20px;
+  right: -20px;
+  animation-delay: 0s;
+}
+.badge-2 {
+  bottom: 40px;
+  left: -30px;
+  animation-delay: 1.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ── SECTION BASE ── */
+section {
+  padding: 100px 60px;
+}
+.section-label {
+  font-size: 0.78rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--melocoton);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.4rem, 3.5vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--verde);
+  margin-bottom: 20px;
+}
+.section-title em {
+  font-style: italic;
+  color: var(--melocoton);
+}
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--texto-suave);
+  line-height: 1.7;
+  max-width: 500px;
+  font-weight: 300;
+}
+
+/* ── SOBRE MÍ ── */
+.sobre {
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding-bottom: 40px;
+}
+.sobre-photo {
+  position: relative;
+}
+.photo-frame {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 200px 200px 24px 24px;
+  background: linear-gradient(
+    160deg,
+    var(--melocoton-palido),
+    var(--verde-suave)
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ESTILOS PARA LA FOTO REAL - Reemplazar .photo-placeholder con <img> cuando tengas la foto */
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo-placeholder {
+  font-size: 8rem;
+  opacity: 0.4;
+  padding-bottom: 20px;
+}
+
+.sobre-quote {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--verde);
+  color: white;
+  padding: 20px 24px;
+  border-radius: 20px;
+  max-width: 220px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+.sobre-content .section-subtitle {
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+.sobre-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+.chip {
+  border: 1.5px solid var(--melocoton-claro);
+  color: var(--cafe);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+}
+
+/* ── GALERÍA DE SILVANA ── */
+.galeria-personal {
+  background: white;
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+.galeria-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ── SERVICIOS ── */
+.servicios {
+  background: var(--crema);
+}
+.servicios-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.servicios-header .section-subtitle {
+  margin: 0 auto;
+}
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.servicio-card {
+  background: white;
+  border-radius: 28px;
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  cursor: default;
+}
+.servicio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+.servicio-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--melocoton), var(--verde));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.servicio-card:hover::after {
+  transform: scaleX(1);
+}
+.servicio-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+.icon-verde {
+  background: var(--verde-suave);
+}
+.icon-melocoton {
+  background: var(--melocoton-palido);
+}
+.servicio-card h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--verde);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+.servicio-card p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--texto-suave);
+  font-weight: 300;
+}
+
+/* ── TALLERES ── */
+.talleres {
+  background: var(--verde);
+  color: white;
+}
+.talleres .section-label {
+  color: var(--melocoton-claro);
+}
+.talleres .section-title {
+  color: white;
+}
+.talleres .section-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+}
+.talleres-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 60px;
+}
+.taller-item {
+  display: flex;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: gap 0.3s;
+}
+.taller-item:hover {
+  gap: 28px;
+}
+.taller-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+.taller-num {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--melocoton-claro);
+  opacity: 0.5;
+  line-height: 1;
+  min-width: 40px;
+}
+.taller-info h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 6px;
+}
+.taller-info p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.talleres-cta-box {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  padding: 48px;
+  text-align: center;
+}
+.talleres-cta-box .big-emoji {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  display: block;
+}
+.talleres-cta-box h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.9rem;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.talleres-cta-box p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.btn-light {
+  background: white;
+  color: var(--verde);
+  padding: 14px 36px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-block;
+  transition: all 0.3s;
+}
+.btn-light:hover {
+  background: var(--melocoton-palido);
+  transform: translateY(-2px);
+}
+
+/* ── VALORES (ENFOQUE) ── */
+.valores {
+  background: white;
+  text-align: center;
+}
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  margin-top: 60px;
+}
+.valor-item {
+  padding: 36px 24px;
+  border-radius: 24px;
+  background: var(--crema);
+  transition: background 0.3s;
+}
+.valor-item:hover {
+  background: var(--verde-suave);
+}
+.valor-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  display: block;
+}
+.valor-item h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--verde);
+  margin-bottom: 10px;
+}
+.valor-item p {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* ── EL ESPACIO (ALQUILER) ── */
+.espacio-alquiler {
+  background: var(--crema);
+}
+.espacio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.espacio-header .section-subtitle {
+  margin-bottom: 0;
+  max-width: 600px;
+}
+
+/* ── CONTACTO ── */
+.contacto {
+  background: var(--melocoton-palido);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--cafe);
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid rgba(90, 110, 58, 0.15);
+  border-radius: 14px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  background: white;
+  color: var(--texto);
+  transition: border-color 0.3s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--verde);
+}
+.form-group textarea {
+  resize: none;
+  height: 120px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.info-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+.info-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+}
+.info-item h5 {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--melocoton);
+  margin-bottom: 4px;
+}
+.info-item p {
+  font-size: 0.92rem;
+  color: var(--texto);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.info-link {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.info-link:hover {
+  color: var(--verde);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--texto);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 48px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-logo {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+.footer-logo span {
+  color: var(--melocoton-claro);
+}
+footer p {
+  font-size: 0.82rem;
+}
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.footer-links a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: color 0.3s;
+}
+.footer-links a:hover {
+  color: white;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav {
+    padding: 16px 24px;
+  }
+  .nav-links {
+    display: none;
+  }
+  section {
+    padding: 70px 24px;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 100px 24px 60px;
+  }
+  .hero-visual {
+    display: none;
+  }
+  .sobre,
+  .contacto {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 70px 24px;
+  }
+  .sobre-photo {
+    display: none;
+  }
+  .servicios-grid {
+    grid-template-columns: 1fr;
+  }
+  .talleres-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .valores-grid {
+    grid-template-columns: 1fr;
+  }
+  .espacio-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 24px;
+  }
+}
+/* Indicador de que la imagen es clickeable */
+.lightbox-trigger {
+  cursor: pointer;
+}
+
+/* ── LIGHTBOX MODAL (VISOR DE IMÁGENES) ── */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding: 40px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    250,
+    248,
+    244,
+    0.95
+  ); /* Color crema de la marca con transparencia */
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  object-fit: contain;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.lightbox.active .lightbox-content {
+  transform: scale(1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: var(--verde);
+  font-size: 3.5rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: color 0.3s;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  color: var(--melocoton);
+}
+
+/* ── GALERÍA ESTILO CARTAS SUPERPUESTAS ── */
+.gallery-staggered-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px; /* Espacio entre la fila superior y la inferior */
+  align-items: center;
+  margin-top: 40px;
+  padding-bottom: 30px;
+}
+
+.gallery-staggered-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-staggered-row .gallery-img {
+  width: 260px;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 4px solid white;
+  margin-left: -50px; /* Aquí se logra el efecto de superposición */
+  position: relative;
+  background: white;
+}
+
+.gallery-staggered-row .gallery-img:first-child {
+  margin-left: 0;
+}
+
+/* Rotaciones alternas y bordes sutiles inspirados en tu marca */
+.gallery-staggered-row .gallery-img:nth-child(1) {
+  transform: rotate(-5deg);
+  z-index: 1;
+  border-color: var(--verde-suave);
+}
+.gallery-staggered-row .gallery-img:nth-child(2) {
+  transform: rotate(3deg) translateY(-10px);
+  z-index: 2;
+  border-color: var(--melocoton-claro);
+}
+.gallery-staggered-row .gallery-img:nth-child(3) {
+  transform: rotate(-3deg) translateY(10px);
+  z-index: 3;
+  border-color: var(--verde-claro);
+}
+
+/* Efecto al pasar el mouse: la foto se endereza, se agranda y pasa al frente */
+.gallery-staggered-row .gallery-img:hover {
+  transform: scale(1.1) rotate(0) translateY(-15px);
+  z-index: 10;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsividad para móviles y tablets */
+@media (max-width: 900px) {
+  .gallery-staggered-row .gallery-img {
+    width: 200px;
+    height: 280px;
+    margin-left: -35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-staggered-row {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .gallery-staggered-row .gallery-img {
+    margin-left: 0;
+    width: 90%;
+    height: 320px;
+    transform: none !important; /* Desactiva las rotaciones en celular para mantener orden */
+  }
+  .gallery-staggered-row .gallery-img:hover {
+    transform: scale(1.03) !important;
+  }
+}
+
+/* ── GALERÍA ESPACIO (MOSAICO) ── */
+.gallery-masonry {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 120px;
+  grid-auto-flow: dense;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+  padding: 10px;
+}
+
+.gallery-masonry .gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border: 1px solid var(--verde-suave);
+}
+
+/* Alturas variadas: patrón que se repite cada 10 fotos */
+.gallery-masonry .gallery-img:nth-child(10n + 1) {
+  grid-row: span 3;
+}
+.gallery-masonry .gallery-img:nth-child(10n + 2) {
+  grid-row: span 2;
+}
+.gallery-masonry .gallery-img:nth-child(10n + 3) {
+  grid-row: span 3;
+}
+.gallery-masonry .gallery-img:nth-child(10n + 4) {
+  grid-row: span 2;
+}
+.gallery-masonry .gallery-img:nth-child(10n + 5) {
+  grid-row: span 2;
+}
+.gallery-masonry .gallery-img:nth-child(10n + 6) {
+  grid-row: span 3;
+}
+.gallery-masonry .gallery-img:nth-child(10n + 7) {
+  grid-row: span 2;
+}
+.gallery-masonry .gallery-img:nth-child(10n + 8) {
+  grid-row: span 3;
+}
+.gallery-masonry .gallery-img:nth-child(10n + 9) {
+  grid-row: span 3;
+}
+.gallery-masonry .gallery-img:nth-child(10n + 10) {
+  grid-row: span 2;
+}
+
+.gallery-masonry .gallery-img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Responsividad */
+@media (max-width: 1100px) {
+  .gallery-masonry {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .gallery-masonry {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
+    gap: 12px;
+  }
+}
+
+/* ── LISTÓN ANIMADO (HERO) ── */
+.ribbon-wrap {
+  /* Estos 2 tiempos también los lee main.js (brillitos): se cambian solo aquí.
+      --ribbon-cycle = duración de cada vuelta del bucle:
+      entra (0–40%) · se queda visible (40–85%) · se desvanece (85–100%) */
+  --ribbon-delay: 1s; /* espera solo antes de la primera vuelta */
+  --ribbon-cycle: 10s;
+  position: relative;
+  width: fit-content;
+}
+
+.hero-ribbon {
+  position: relative;
+  width: 240px;
+  aspect-ratio: 794 / 164;
+  margin-bottom: 12px;
+
+  /* Entrada: aparece desde la derecha */
+  -webkit-mask-image: linear-gradient(
+    to left,
+    #000 0%,
+    #000 40%,
+    transparent 60%
+  );
+  mask-image: linear-gradient(to left, #000 0%, #000 40%, transparent 60%);
+  -webkit-mask-size: 250% 100%;
+  mask-size: 250% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: ribbon-enter var(--ribbon-cycle) linear var(--ribbon-delay)
+    infinite both;
+}
+
+.hero-ribbon img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Nudo: se queda quieto y "respira" */
+.ribbon-knot {
+  -webkit-mask-image: linear-gradient(to right, #000 22%, transparent 30%);
+  mask-image: linear-gradient(to right, #000 22%, transparent 30%);
+  transform-origin: 14% 50%;
+  animation: knot-breathe 6s ease-in-out infinite;
+}
+
+/* Cinta: ondula desde el nudo */
+.ribbon-tail {
+  -webkit-mask-image: linear-gradient(to right, transparent 22%, #000 30%);
+  mask-image: linear-gradient(to right, transparent 22%, #000 30%);
+  transform-origin: 24% 50%;
+  animation: ribbon-sway 6s ease-in-out infinite;
+}
+
+@keyframes ribbon-enter {
+  /* 0–40%: la cinta aparece desde la derecha */
+  0% {
+    -webkit-mask-position: 0% 0;
+    mask-position: 0% 0;
+    opacity: 0;
+    transform: translateX(24px);
+    animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  6% {
+    opacity: 1;
+  }
+  40% {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  /* 40–85%: se queda visible (solo ondula) */
+  85% {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+    opacity: 1;
+    transform: translateX(0);
+    animation-timing-function: ease-in;
+  }
+  /* 85–100%: se desvanece y vuelve a empezar */
+  100% {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+    opacity: 0;
+    transform: translateX(0);
+  }
+}
+
+@keyframes knot-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025) rotate(1deg);
+  }
+}
+
+@keyframes ribbon-sway {
+  0%,
+  100% {
+    transform: rotate(-1.2deg) skewY(-1deg);
+  }
+  50% {
+    transform: rotate(1.2deg) skewY(1.5deg);
+  }
+}
+
+/* Brillitos (los crea main.js) */
+.ribbon-sparkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 794 / 164;
+  pointer-events: none;
+}
+
+.ribbon-sparkles i {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 1.6s ease-out both;
+}
+
+/* Algunos brillos con forma de estrella de 4 puntas */
+.ribbon-sparkles i.star {
+  border-radius: 0;
+  clip-path: polygon(
+    50% 0,
+    62% 38%,
+    100% 50%,
+    62% 62%,
+    50% 100%,
+    38% 62%,
+    0 50%,
+    38% 38%
+  );
+}
+
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.3);
+  }
+}
+
+/* Accesibilidad: sin movimiento si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  .hero-ribbon {
+    animation: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .ribbon-knot,
+  .ribbon-tail {
+    animation: none;
+  }
+  .ribbon-sparkles {
+    display: none;
+  }
+}
