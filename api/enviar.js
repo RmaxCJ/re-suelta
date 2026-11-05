@@ -89,18 +89,16 @@ export default async function handler(req, res) {
     });
 
     if (response.ok) {
-      return res
-        .status(200)
-        .json({
-          message:
-            "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
-        });
+      return res.status(200).json({
+        message:
+          "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+      });
     } else {
-      return res
-        .status(500)
-        .json({
-          error: "Hubo un problema al enviar el mensaje. Inténtalo de nuevo.",
-        });
+      const detalle = await response.text();
+      console.error("Resend error:", response.status, detalle);
+      return res.status(500).json({
+        error: "Hubo un problema al enviar el mensaje. Inténtalo de nuevo.",
+      });
     }
   } catch (error) {
     return res
