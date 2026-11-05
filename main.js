@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ── 1. LIGHTBOX (Visor de imágenes) ──
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
   const closeBtn = document.querySelector(".lightbox-close");
@@ -24,26 +25,28 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   // Cerrar al hacer clic en la "X"
-  closeBtn.addEventListener("click", closeLightbox);
+  if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
 
   // Cerrar al hacer clic en el fondo difuminado
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
+  if (lightbox) {
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
 
   // Cerrar presionando la tecla Escape
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+    if (e.key === "Escape" && lightbox?.classList.contains("active")) {
       closeLightbox();
     }
   });
 
-  // Brillitos del listón: se repiten en cada vuelta del bucle del CSS
-  // (los tiempos salen de --ribbon-delay / --ribbon-cycle)
+  // ── 2. BRILLITOS DEL LISTÓN (Animación) ──
   const ribbon = document.querySelector(".hero-ribbon");
   const sparkleBox = document.querySelector(".ribbon-sparkles");
+
   if (
     ribbon &&
     sparkleBox &&
@@ -52,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const css = getComputedStyle(sparkleBox);
     const DELAY = parseFloat(css.getPropertyValue("--ribbon-delay")) || 0;
     const CYCLE = parseFloat(css.getPropertyValue("--ribbon-cycle")) || 10;
-    const ENTRY = CYCLE * 0.4; // la cinta tarda el 40% del ciclo en entrar (ver @keyframes ribbon-enter)
+    const ENTRY = CYCLE * 0.4; // la cinta tarda el 40% del ciclo en entrar
     const COUNT = 46; // cantidad de brillitos por vuelta
     const COLORS = [
       "#F2C14E",
@@ -100,11 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Formulario sin recargar (AJAX) con SweetAlert2
+  // ── 3. ENVÍO DE FORMULARIO A VERCEL CON SWEETALERT2 ──
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
-    // Estilo común de las alertas (antes se repetía 3 veces)
+    // Estilo común de las alertas de re:suelta
     const swalBase = { background: "#faf8f4", color: "#3d3830" };
     const VERDE = "#5a6e3a";
     const MELOCOTON = "#e8a87c";
@@ -112,23 +115,37 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault(); // Evita que la página se recargue
 
-      const formData = new FormData(contactForm);
       const btnEnviar = document.getElementById("btnEnviar");
       const textoOriginal = btnEnviar.innerHTML;
 
       btnEnviar.textContent = "Enviando... 💛";
       btnEnviar.disabled = true;
 
-      fetch("enviar.php", { method: "POST", body: formData })
-        .then((response) =>
-          response.text().then((text) => ({ status: response.status, text })),
-        )
+      // Extraer datos y convertirlos a formato JSON
+      const formData = new FormData(contactForm);
+      const data = Object.fromEntries(formData.entries());
+
+      // Apuntar a la función Serverless de Vercel
+      fetch("/api/enviar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((response) => {
+          return response.json().then((json) => {
+            return { status: response.status, data: json };
+          });
+        })
         .then((res) => {
           if (res.status === 200) {
             Swal.fire({
               ...swalBase,
               title: "¡Enviado!",
-              text: "Mensaje enviado con éxito. Nos pondremos en contacto pronto.",
+              text:
+                res.data.message ||
+                "Mensaje enviado con éxito. Nos pondremos en contacto pronto.",
               icon: "success",
               confirmButtonColor: VERDE,
             });
@@ -137,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
             Swal.fire({
               ...swalBase,
               title: "¡Error!",
-              text: res.text || "Hubo un problema al enviar el mensaje.",
+              text: res.data.error || "Hubo un problema al enviar el mensaje.",
               icon: "error",
               confirmButtonColor: MELOCOTON,
             });
@@ -153,6 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         })
         .finally(() => {
+          // Se ejecuta siempre al final para restaurar el botón
           btnEnviar.innerHTML = textoOriginal;
           btnEnviar.disabled = false;
         });
